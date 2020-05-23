@@ -28,7 +28,6 @@ public class TestTricolor {
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.gsgroup.tricoloronline.mobile");
         caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.gsgroup.phoenix.ui.screen.launch.LauncherActivity");
-//        caps.setCapability(MobileCapabilityType.APP, "\\src\\test\\java\\actions.TestTest.java");
         URL appiumURL = new URL("http://localhost:4723/wd/hub");
 
         driver = new AppiumDriver<MobileElement>(appiumURL, caps);

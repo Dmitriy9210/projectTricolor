@@ -4,15 +4,14 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
-import static org.openqa.selenium.By.id;
-import static org.openqa.selenium.By.xpath;
+import static org.openqa.selenium.By.*;
 
 public class MenuPage extends AbstractPage {
     public MenuPage(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 
-    private By btnOpenMenu = xpath("//android.widget.ImageButton[@content-desc=\"Открыть меню\"]");
+    private By btnOpenMenu = className("android.widget.ImageButton");
     private By btnAuth = id("com.gsgroup.tricoloronline.mobile:id/sign_in_button");
     private By btnChanel = xpath("//*[contains(@text, 'Каналы')]");
 
