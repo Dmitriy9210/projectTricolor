@@ -9,6 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.AuthorizationPage;
+import pages.ChanelPage;
 import pages.MenuPage;
 
 import java.net.MalformedURLException;
@@ -43,7 +44,7 @@ public class TestTricolor {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clicBtnAuth();
         new AuthorizationPage(driver).authUser("41219007268222", "92090009");
-        menuPage.clicBtnChanel();
+        new ChanelPage(driver).openChanelPage();
     }
 
 }
