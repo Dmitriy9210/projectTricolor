@@ -2,7 +2,7 @@
 
 В проекте тестируется мобильное приложение **"Кино и ТВ"**.
 
-*Тест расположен:* H:\project mobile\projectKinoAndTv\src\test\java\actions\TestTricolor.java
+*Тест расположен:* \src\test\java\actions\TestTricolor.java
 
 
 *Предусловия для запуска теста:*
