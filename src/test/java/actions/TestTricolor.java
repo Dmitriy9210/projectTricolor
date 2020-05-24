@@ -5,9 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.AuthorizationPage;
 import pages.ChanelPage;
 import pages.MenuPage;
@@ -19,7 +17,7 @@ public class TestTricolor {
 
     private AppiumDriver<MobileElement> driver;
 
-    @BeforeTest
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
 
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -34,16 +32,21 @@ public class TestTricolor {
         driver = new AppiumDriver<MobileElement>(appiumURL, caps);
     }
 
-    @AfterTest
-    public void testStop() {
-        driver.quit();
+    @AfterMethod
+    public void testNext() {
+        driver.resetApp();
     }
 
     @Test
-    public void firstTest() {
+    public void checkPageChanelWithAuth() {
         MenuPage menuPage = new MenuPage(driver);
         menuPage.clicBtnAuth();
         new AuthorizationPage(driver).authUser("41219007268222", "92090009");
+        new ChanelPage(driver).openChanelPage();
+    }
+
+    @Test
+    public void checkPageChanelWithoutAuth() {
         new ChanelPage(driver).openChanelPage();
     }
 
